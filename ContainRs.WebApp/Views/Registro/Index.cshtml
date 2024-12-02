@@ -15,10 +15,16 @@
         <img width="100px" src="~/images/containrs_logo.png" />
     </div>
 
-    <div class="form-group col-12 mt-2">
+    <div class="form-group col-9 mt-2">
         <label class="form-label" asp-for="Nome"></label>
         <input class="form-control" asp-for="Nome"/>
         <span class="is-invalid text-danger small" asp-validation-for="Nome"></span>
+    </div>
+
+    <div class="form-group col-3 mt-2">
+        <label class="form-label" asp-for="Nascimento"></label>
+        <input class="form-control" asp-for="Nascimento" />
+        <span class="text-danger small" asp-validation-for="Nascimento"></span>
     </div>
 
     <div class="form-group col-6 mt-2">

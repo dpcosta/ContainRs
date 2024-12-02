@@ -26,6 +26,14 @@ public class RegistroController : Controller
     {
         if (!ModelState.IsValid) return View("Index", form);
 
+        // Verifica se a pessoa possui mais de 18 anos
+        var idade = DateTime.Today.Year - form.Nascimento.Year;
+        if (idade < 18)
+        {
+            ModelState.AddModelError("Nascimento", "Obrigatório ter mais de 18 anos.");
+            return View("Index", form);
+        }
+
         var cliente = new Cliente(form.Nome, form.Email, form.CPF)
         {
             Celular = form.Celular,

@@ -18,6 +18,10 @@ public class RegistroViewModel
     public string CPF { get; set; }
     [Display(Prompt = "(00) 00000-0000")]
     public string? Celular { get; set; }
+    [Display(Name = "Nascimento (*)")]
+    [Required(ErrorMessage = "Campo obrigatório.")]
+    [DataType(DataType.Date)]
+    public DateTime Nascimento { get; set; }
     [Display(Prompt = "00.000-000")]
     public string? CEP { get; set; }
     public string? Rua { get; set; }
